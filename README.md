@@ -1,4 +1,4 @@
-# Forum Website
+# Forum Website With Djando
 
 - Built a website allowing UMass students to create and view survey and discussion posts from other UMass students
 - Website allows secured login functionality for UMass students and students can vote on survey posts and view results in the form of a pie chart
