@@ -51,7 +51,10 @@ Similar to the discussion page above, mainly meant to just present the surveys c
 Page that displays all personal contributions to the site.
 
 ![discussionForm IMG](/discussionForm.png "Discussion Form")
-The page that holds the form to submit one of the discussions to be promoted to the front page
+The page that holds the form to submit one of the discussions to be promoted to the front page.
+
+![surveyResults IMG](/surveyResults.png "Survey Resutls")
+The page shows an example of the results of a survey post being displayed in a pie chart.
 
 
 # Data Model 
