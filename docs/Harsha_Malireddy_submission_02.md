@@ -1,6 +1,0 @@
-For this project, I wrote the createsurvey.html template which displays the webpage needed for someone to create a survey. In the urls.py file I also added the two path lines indicating which methods should be invoked in the views.py file once the "createsurvey/" and “surveyresults/” web pages are accessed. In addition, in the views.py file I wrote the method “createsurvey.”
-
-I also worked on the survey results page. In the views.py file I wrote the method “surveyResults” which passes elements to the surveyresults.html file so that it can display the proper choices for each post. I initially created surveyresults.html file and added the double for loop logic. Later, the “surveyResults” method in the views.py was edited heavily by other members as well as the surveyresults.html file which was slightly modified with a couple of lines to make it function properly. 
- 
-Lastly, I worked on the submission_02.md file which contains the team write up. I wrote most of all the required sections of the team write up, which other members of the team later edited. 
- 

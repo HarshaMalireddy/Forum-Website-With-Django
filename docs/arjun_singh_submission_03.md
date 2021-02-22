@@ -1,1 +1,0 @@
-I was able to help through a few ways. I was able to help collaboarte with someteam memebers in helping them with some issues on their parts. There wasnt much for me to do since we had a lot of implementation solved. I created the video to showcase the aspects of the project that we worked on as well had a full understanding of how the code worked. 

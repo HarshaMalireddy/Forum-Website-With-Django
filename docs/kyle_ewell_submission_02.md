@@ -1,5 +1,0 @@
-One of my main contributions was helping us figure out URL Mappings for the various pages. More specifically for the discussion pages, stephen did a lot of the tough deciphering. Figuring out how to set up forms in html and utilizing other tags was an issue we tackled. I did some of the mappings on the discussion pages.  
-
-Additionally I was the main contributor on the style and design of the discussion creation page. This page required a little bit of CSS in my mind to be set apart from the other forms we had so I took the inititaitve on that. This same style was used elsewhere in the site for more pages.  
-
-Another main portion of what I did was spent figuring out how to, as well as actually executing, the video explaining our data model. Planning the order of talking points as well as how much to touch on was discussed with the small team that made it.    
