@@ -7,9 +7,6 @@ Web Development
 - Wrote in Python, HTML5, CSS, and JavaScript programming languages to create and style different web pages, add functionality, and store data to database
 - Used the Model-View-Template (MVT) architecture of Django to write methods in model, views, and forms python files and created several HTML5 template files to render the webpages
 
-#Team 3_Hunnit
-#Umass Forum
-#Fall 2018
 
 # Overview 
 Our application is a forum for UMass students that allows users to create discussion posts and survey posts. Users can create discussion posts by entering a title and the content of the discussion. Users can create survey posts by entering a question and giving multiple choice options for others to choose from. The authors of survey posts can also select how they want the results to be displayed: a poll percentage, bar chart or pie chart. Users can also upload images and comment on posts. The aim is to provide more ways for UMass students to communicate, and to see how the community at large feels on certain topics. 
@@ -35,7 +32,7 @@ In terms of functionality, we decided that users will not be allowed to modify s
 
 # User Interface 
 
-![HomePage IMG](/docs/imgs/homepage.png "HomePage")
+![HomePage IMG](/homepage.png "HomePage")
 This is the main landing page when a user first logs in to the site, which will show some basic statistics about the website, and allow the user to access the content he/she desires.
 
 ![Login IMG](/docs/imgs/login.png "Login")
