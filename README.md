@@ -36,30 +36,30 @@ This is the main landing page when a user first logs in to the site, which will 
 ![HomePage IMG](/Images/homepage.png "HomePage")
 
 This is what the user will see when they attempt to log in to the site.
-![Login IMG](/login.png "Login")
+![Login IMG](/Images/login.png "Login")
 
 This is what the user will see when they log out of the site.
-![Logout IMG](/logout.png "Logout")
+![Logout IMG](/Images/logout.png "Logout")
 
 This is the main discussions page that displays all the latest discussion posts. This particular UI is meant to filter by 'most recent' and all user posts would end up here, functionlaity will be added in future to be able to keep posts private or to specific users.
-![discussionPage IMG](/discussionPage.png "Discussions")
+![discussionPage IMG](/Images/discussionPage.png "Discussions")
 
 Similar to the discussion page above, mainly meant to just present the surveys created by all users on the site. Also allows users to vote live on page and see results. 
-![surveyPage IMG](/surveyPage.png "Surveys")
+![surveyPage IMG](/Images/surveyPage.png "Surveys")
 
 Page that displays all personal contributions to the site.
-![yourPosts IMG](/yourPosts.png "Your Posts")
+![yourPosts IMG](/Images/yourPosts.png "Your Posts")
 
 The page that holds the form to submit one of the discussions to be promoted to the front page.
-![discussionForm IMG](/discussionForm.png "Discussion Form")
+![discussionForm IMG](/Images/discussionForm.png "Discussion Form")
 
 The page shows an example of the results of a survey post being displayed in a pie chart.
-![surveyResults IMG](/surveyResults.png "Survey Resutls")
+![surveyResults IMG](/Images/surveyResults.png "Survey Resutls")
 
 
 # Data Model 
 We have 6 models in our models.py file: UserAccount, DiscussionPost, CommentSection, SurveyPost, Choice, Document. The UserAccount model identifies different users which contains a username, a first name, and a last name. The DiscussionPost contains information regarding a post, including the title, the author (a UserAccount object), the content of the post, and a reference to a comment section. The comment is tied to the discussion post, many comments can link to one discussion post and each content contains a user, and text. The SurveyPost model contains a title, a UserAccount, a question, and the options that can be voted for. The options are found in the Choice model and are a different data model where many different instances of Choice can link to one survey post. Each instance of a Choice contains the actual option and the number of votes that the option has received. Our 6th model document describes the details of the documents uploaded by the user. It contains the author field, uploaded_at field that describes the time it was uploaded, description field that explains the uploaded image and the document field.
-![FinalDataModel IMG](/FinalDataModel.png "Final Data Model")
+![FinalDataModel IMG](/Images/FinalDataModel.png "Final Data Model")
 
 
 # URL Routes/Mappings 
