@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul class="discussionPostList">
+    <h2 style="color:white" align = "center"><i>Discuss {{object.disc_author.first_name}}'s post!</i></h1><br>
+<div class="discussionPost">
+  <h3>{{ object.title }}</h3>
+  <strong> <i>Post by:</i> {{ object.disc_author }}</strong> <br><br>
+  <p>"{{ object.content }}"</p> 
+  
+  
+  {% if user.is_authenticated %}
+    {% if user.username == object.disc_author.user_name  %}
+  <a href="{{ request.get_full_path }}/update">edit</a>
+    {% endif %}
+  {% endif %}
+</div>
+    
+<br><h3 style="color:white"> Responses: </h3>
+{% if object.comments.all.count >= 1 %}
+  {% for comment in  object.comments.all %}
+  <p class = "discussionPost"><i>{{comment.author}}:</i><br> {{comment.text}}</p>
+  {% endfor %}
+{% else %}
+  <h4 style="color:white"><i>There are no comments yet, be the first to get the discussion going!</i></h4>
+{% endif %}
+
+
+{% if user.is_authenticated %}
+  <!-- <label style="color:white" for="commentAdd">Leave a comment:</label><br>
+  <input id="commentAdd" type="text"> -->
+
+<!-- <form action="" method="post">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">@{{user}}</span>
+      <input type="text" name='text' id='content' class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" style="width:75%">
+      <input type="hidden" name='author' id='author' class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" style="width:75%" value="{{ user }}">
+      <input type="hidden" name='post' id='author' class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" style="width:75%" value="{{ object }}">
+       {% csrf_token %}
+      <button class="btn">Submit</button>
+    </div>
+  </div>
+  </form>  -->
+      <form method="post">
+      {% csrf_token %}
+      {{ form.as_p  }}
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+{% else %}
+  <h4  style="color:white">You must log in to leave a comment!</h4>
+{% endif %}
+
+{% endblock %}
+  

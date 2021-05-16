@@ -1,0 +1,30 @@
+<!-- {% extends "base.html" %}
+{% block content %}
+
+	{% if context.postlist %}
+		<ul>
+		{% for post in postlist %}
+			<li><a href="{% url 'spdetails' post.id %}">{{ post.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No posts are available.</p>
+	{% endif %}
+
+{% endblock %} -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>UMass Posts Home</h1>
+<p>
+  Welcome to UMass Posts,
+  a website developed by
+  <em>3Hunnit</em>!
+</p>
+
+<ul>
+  <li><strong>Total Discussion Posts:</strong> {{ num_discposts }}</li>
+  <li><strong>Total Survey Posts:</strong> {{ num_surveyposts }}</li>
+  <li><strong>Total Users:</strong> {{ num_users }}</li>
+</ul>
+{% endblock %}

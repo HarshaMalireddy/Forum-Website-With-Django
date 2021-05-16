@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Survey Posts List</h1>
+
+<ul>
+  {% for survey in posts %}
+  <ul>
+    <li class="surveypost">
+      <a href="">{{ survey.title }}</a> ({{survey.survey_author}})
+      <h1></h1>
+    </li>
+
+  </ul>
+  {% endfor %}
+</ul>
+
+{% endblock %}

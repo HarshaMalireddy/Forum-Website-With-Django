@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block title %}<title>UMass Forums</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+    <!-- Add additional CSS in static file -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <!-- charts js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+  {% load static %}
+  <!-- pallettes for charts js -->
+  <script src="https://codepen.io/anon/pen/aWapBE.js"></script>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg" style="background-color: maroon; height:100px">
+    <a class="navbar-brand" href="/">
+      <img src="{% static 'images/umasslogo.png' %}" style="margin-top:-30px;" width="200" height="75" alt="">
+    </a>
+
+    <ul class="navbar-nav mr-auto">
+      <!-- Survey Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle navItems" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Surveys
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item navItems" href="/UMassApp/surveyresults/" style="color: black !important ">Surveys</a>
+          <a class="dropdown-item navItems" href="/UMassApp/createsurvey/" style="color: black !important ">Create a Survey</a>
+        </div>       
+      </li>
+      <!-- Discussions Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle navItems" href="#" id="discussionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Discussions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="discussionDropdown">
+          <a class="dropdown-item navItems" href="/UMassApp/discussionposts/" style="color: black !important ">Discussion Posts</a>
+          <a class="dropdown-item navItems" href="/UMassApp/discussioncreation/" style="color: black !important ">Create a Discussion Post</a>
+        </div>       
+      </li>
+      <!-- Document Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle navItems" href="#" id="discussionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Documents
+        </a>
+        <div class="dropdown-menu" aria-labelledby="discussionDropdown">
+          <a class="dropdown-item navItems" href="/UMassApp/imageposts/" style="color: black !important ">Posted Images</a>
+          <a class="dropdown-item navItems" href="/UMassApp/docUpload/" style="color: black !important ">Upload an Image</a>
+        </div>       
+      </li>
+    </ul>
+    <ul class="navbar-nav" style="float:right; margin-right:2%">
+      <!-- Utilities -->
+      {% if user.is_authenticated %}
+
+        <li class="nav-item navItems">
+          <a href="{% url 'logout'%}" style="text-decoration: none; color:white">Logout</a>
+        </li>
+
+      {% else %}
+
+        <li class="nav-item navItems">
+          <a href="{% url 'login'%}?next={{request.url}}" style="text-decoration: none; color:white">
+            Log In&nbsp;<span class="glyphicon glyphicon-menu-hamburger" style= "font-size: 30px; color:#555"></span>
+          </a>
+        </li>
+
+      {% endif %}
+      
+      <li class="nav-item">
+        <input class="form-control" style="margin-left:2em;" type="text" placeholder="Search" aria-label="Search">
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- OLD v -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+        {% block sidebar %}
+        <div class="sidebar">
+          {% if user.is_authenticated %}
+          <ul style="list-style:none;padding-bottom:12px;">
+            <li>
+              <img class="profilePic" src = "{% static 'images/profile_picture.jpg' %}" style="float:center"  height="80" width="80">
+            </li>
+            <li>
+              <h2>
+                Welcome {{ user.first_name }}
+              </h2>
+            </li>
+            <li><a  href="/UMassApp/user" style="color:black  !important ;">View Your Posts<span class="glyphicon glyphicon-share-alt"></span></a> </span></li>
+          </ul>
+          {% else %} 
+          <ul style="list-style:none;padding-bottom:12px;">
+            
+            <li>
+              <img class="profilePic" src = "{% static 'images/profile_picture.jpg' %}" style="float:center"  height="80" width="80">
+            </li>
+            <li>
+                Please <a href="{% url 'login'%}?next={{request.url}}" style="text-decoration: none; color:black">
+                    <u>Log In</u>
+                  </a> to see profile information.
+              </li>
+          </ul>
+          {% endif %}
+        </div>
+        {% endblock %}
+      </div>
+      <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="footer">
+  <h4 style="text-align:center"><i>UMass Forums is a 3_hunnit production</i></h4>
+  <div style="float:left">
+    <h4 style="text-align:left; margin-left:10%">Our Members</h4>
+    <ul style="float:left">
+      <li style="display:inline">Conor Carmichael,</li>
+      <li style="display:inline">Kyle Ewell,</li>
+      <li style="display:inline">Harsha Malireddy,</li>
+      <li style="display:inline">Monmoy Mohsin,</li>
+      <li style="display:inline">Arjun Singh,</li>
+      <li style="display:inline">Stephen Ulich</li>
+    </ul>
+  </div>
+  
+</div> -->
+
+
+</body>
+
+</html>

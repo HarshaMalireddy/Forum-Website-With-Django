@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 align="center">Survey Results</h1>
+<h1 align="center">{{ object.title }}</h1>
+<h3 align="center">{{object.question }}</h3>
+<canvas id="resultsGraph"></canvas>
+<script>
+   var resultsGraph = document.getElementById("resultsGraph");
+   var length = 0
+   {% for choice in  object.choices.all%}
+   length=length+1
+   {% endfor %}
+   Chart.defaults.global.defaultFontFamily = "Lato";
+   Chart.defaults.global.defaultFontSize = 18;
+   var results = {
+       labels: [{% for choice in  object.choices.all %} '{{ choice.option}}', {% endfor %}],
+       datasets: [
+           {
+               data: [{% for choice in  object.choices.all %}  '{{ choice.votes }}', {% endfor %}],
+                 	backgroundColor: palette('tol',length ).map(function(hex) {
+         return '#' + hex;
+       })
+   
+           }]
+      			};
+   console.log(results)
+   
+   var pieChart = new Chart(resultsGraph, {
+     type: 'pie',
+   data: results,
+   
+   });
+</script>
+{% for choice in  object.choices.all %}
+{{choice.option}} ({{choice.votes}})
+{% endfor %}
+{% endblock %}

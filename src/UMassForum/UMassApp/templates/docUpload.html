@@ -1,0 +1,28 @@
+<style>
+.enlarge{
+	min-height:200px;
+	min-width:100%;
+}
+</style>
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_superuser %}
+        <h1>You cannot upload an image here, please use the admin site.
+
+{% elif user.is_authenticated %}	
+	<div class="container">
+		<h1><strong>Upload Image</strong></h1>
+		<form method="post" enctype="multipart/form-data">
+		    {% csrf_token %}
+		    {{ form.as_p }}
+		    <button type="submit">Upload</button>
+		  </form>
+	</div>
+
+{% else %}
+	<h1> You must log in to upload an image.</h1>
+	<h2>Log in via the navbar</h2>
+
+{% endif %}
+{% endblock %}

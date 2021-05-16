@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Discussion Posts</h1>
+
+<ul class="discussionPostList">
+	{% for discussion in dposts %}
+		<li class="discussionPost">
+			<h3 style="text-align:center">{{ discussion.title }}</h3>
+			<p>Posted by <u> {{ discussion.disc_author }} </u> </p>
+			<p>
+				{{ discussion.content }}
+			</p>
+			<a href="{{ discussion.get_absolute_url }}">Go to Post Discussion!</a>
+		</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

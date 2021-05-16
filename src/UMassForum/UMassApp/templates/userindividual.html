@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1 style="text-decoration:underline">Hey {{ user.first_name }}, here are your contributions to UMass Forums!</h1>
+
+
+<h2>You Have Started {{ discposts.count }} Discussions</h2>
+
+<ul class="discussionPostList">
+	{% for discussion in discposts %}
+		<li class="discussionPost">
+			<h3 style="text-align:center">{{ discussion.title }}</h3>
+			<p>
+				{{ discussion.content }}
+			</p>
+			<a href="{{ discussion.get_absolute_url }}">Go to Post Discussion!</a>
+		</li>
+	{% endfor %}
+</ul>
+<h2>You Have Created {{ surveyposts.count }} Surveys</h2>
+<ul class="discussionPostList">
+	{% for post in surveyposts %}
+		<li class="surveyPost" id="{{post.options}}">
+			<h3>Title: {{post.question}}</h3>
+			<a href='{{ post.get_absolute_url }}'>Go to Survey Post!</a>
+		</li>
+	{% endfor %}
+</ul>
+            
+
+{% endblock %}

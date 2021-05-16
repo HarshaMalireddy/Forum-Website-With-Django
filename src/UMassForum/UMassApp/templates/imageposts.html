@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Posted Images</h1>
+
+<ul class="discussionPostList">
+	{% for image in iposts %}
+		<li class="discussionPost">
+			<h3 style="text-align:center">{{ image.description }}</h3>
+			<p>{{image.document.url}}</p>
+			<img src="../uploadedImages/times_square.jpg" alt="">
+			<p>Posted by <u> {{ image.author }} </u> </p>
+		</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

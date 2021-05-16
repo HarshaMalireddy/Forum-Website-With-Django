@@ -1,0 +1,28 @@
+<style>
+.enlarge{
+	min-height:200px;
+	min-width:100%;
+}
+</style>
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_superuser %}
+        <h1>You cannot create a post here, please use the admin site.
+
+{% elif user.is_authenticated %}	
+	<div class="container">
+		<h1><strong>Create Discussion</strong></h1>
+		<form method="post">
+			{% csrf_token %}
+			{{ form }}
+			<button class="btn btn-success" type="submit">Submit</button>
+		</form>
+	</div>
+
+{% else %}
+	<h1> You must log in to create a post.</h1>
+	<h2>Log in via the navbar</h2>
+
+{% endif %}
+{% endblock %}

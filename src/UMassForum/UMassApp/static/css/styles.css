@@ -1,0 +1,91 @@
+html, body{
+    height: 100%
+}
+.surveyPost {
+    list-style: none;
+    border-radius: 10px;
+    border: 2px solid grey;
+    background-color: rgba(255, 255, 255, 0.89);
+    padding: 12px;
+    margin: 8px;
+    font-size: 18px;
+}
+
+.surveyPostList {
+    border: 1px solid black;
+    background-color: rgba(128, 0, 0, 0.644);
+    border-radius: 16px;
+}
+
+
+.discussionPostList{
+    border: 1px solid black;
+    background-color: rgba(128, 0, 0, 0.644);
+    border-radius: 16px;;
+}
+
+.discussionPost{
+    list-style: none;
+    border-radius: 10px;
+    border: 2px solid grey;
+    background-color: rgba(255, 255, 255, 0.89);
+    padding: 12px;
+    margin: 8px;
+}
+
+.navItems{
+    font-style: none;
+    color:white;
+    font-size: 24px;
+}
+
+.sidebar{
+    background-color: rgba(192, 192, 192, 0.623);
+    border-radius: 12px;
+}
+
+.profilePic{
+    border-radius: 12px;
+    margin-left:25%;
+    margin-top:5%;
+}
+
+.footer{
+    position: relative;
+    padding-top: 16px;
+    margin-top:4em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 150px;
+    background-color:rgba(76,76,76,1);
+    color: white;
+    text-align: center;
+}
+
+.siteSummary{
+    padding-top:24px;
+    background-color: rgba(128, 0, 0, 0.336);
+    border-radius: 10px;
+    border: 2px solid grey;
+}
+.carousel-inner > .item > img {
+    /* width:450px;
+    height:325px; */
+    margin:0 auto;
+}
+
+.carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+}
+#myCarousel{
+    box-shadow: 12px;
+    size: 75%;  
+}
+.carousel-control.left, .carousel-control.right {
+    background-image:none !important;
+    filter:none !important;
+    color:maroon;
+ }

@@ -1,0 +1,9 @@
+<h1>{{ post.question }}</h1>
+
+<ul>
+{% for option in post.option.all %}
+    <li>{{ option.option }} -- {{ option.votes }} vote{{ option.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'detail' post.id %}">Vote again?</a>

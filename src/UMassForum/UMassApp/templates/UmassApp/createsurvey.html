@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>This section is still under construction. Will be ready for final submission. For Submission 3, try clicking on Create Discussion in the Discussions Section.</h1><br>
+    {% if user.is_superuser %}
+        <h1>You cannot create a post here, please use the admin site.
+
+    {% elif user.is_authenticated %}
+        Title:
+        <input type = "text"><br><br>
+         
+        Author:  
+        <input type = "text"><br><br>
+       
+        Q1. <p></p><textarea rows = "4" cols = "48"></textarea><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;  
+        
+        MC Results Display: 
+        &nbsp; Poll % <input type = "checkbox"> 
+        &nbsp; Bar Chart <input type = "checkbox">
+        &nbsp; Pie Chart <input type = "checkbox"><br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+
+        <input type = "radio"> A <input type = "text"><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type = "radio"> B <input type = "text"><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type = "radio"> C <input type = "text"><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type = "radio"> D <input type = "text"><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+         
+        <button type = "button">Add Answer Choice</button><br>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type = "button">Delete Answer Choice</button><br><br>
+        
+        <a href= "/UMassApp/surveyposts/"><button type = "button">Finish</button></a> 
+
+    {% else %}
+        <h1> You must log in to create a post.</h1>
+        <h2>Log in via the navbar</h2>
+    
+    {% endif %}
+{% endblock %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

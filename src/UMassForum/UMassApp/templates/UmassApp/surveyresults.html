@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if surveyPosts %}
+        <h1>Survey Posts</h1>
+        <ul class = "surveyPostList">
+            
+            {% for post in surveyPosts %}
+                <li class="surveyPost" id="{{post.options}}">
+                    <p>
+                        {{post.question}}<br>Posted by: {{post.survey_author}}<br>
+                    </p>
+                    <br><strong>Choices</strong><br>
+
+                    {% for choice in  post.choices.all %}
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" >{{choice.option}}</label>
+                        </div>
+                    {% endfor %}
+                    <button class="btn" style="background-color:maroon;color:white" onclick="window.location.href='{{ post.get_absolute_url }}'" >Vote</button>
+                  <!-- <a href="">See Results</a> -->
+                </li>
+             {% endfor %}
+        </ul>
+    {% else %}                                                                                \
+        <h4>There are no survey posts</h4>
+    {% endif %}
+{% endblock %}
