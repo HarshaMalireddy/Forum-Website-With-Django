@@ -33,7 +33,7 @@ In terms of functionality, we decided that users will not be allowed to modify s
 # User Interface 
 
 This is the main landing page when a user first logs in to the site, which will show some basic statistics about the website, and allow the user to access the content he/she desires.
-![HomePage IMG](/homepage.png "HomePage")
+![HomePage IMG](/Images/homepage.png "HomePage")
 
 This is what the user will see when they attempt to log in to the site.
 ![Login IMG](/login.png "Login")
